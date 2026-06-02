@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SurplusBot — Dashboard</title>
+  <style>
+    :root {
+      --bg:#0a0a0f; --card:#12121a; --border:#1e1e2e;
+      --accent:#6c63ff; --accent2:#00d2ff; --text:#e2e2f0;
+      --muted:#7070a0; --green:#00c896; --red:#ff4d6d; --yellow:#ffd166;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.5;}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;border-bottom:1px solid var(--border);background:var(--card);}
+    .topbar .logo{font-weight:700;font-size:1rem;}
+    .topbar .logo span{color:var(--accent2);}
+    .topbar .status{font-size:.8rem;color:var(--muted);}
+    .topbar .status .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:6px;}
+    main{padding:28px;max-width:1200px;margin:0 auto;}
+    h2{font-size:1rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px;}
+    /* KPI GRID */
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:32px;}
+    .kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;}
+    .kpi .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+    .kpi .value{font-size:1.8rem;font-weight:800;}
+    .kpi .delta{font-size:.78rem;margin-top:4px;}
+    .kpi .delta.up{color:var(--green);}
+    .kpi .delta.down{color:var(--red);}
+    .kpi .delta.neutral{color:var(--muted);}
+    /* SECTION ROW */
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px;}
+    @media(max-width:700px){.row{grid-template-columns:1fr;}}
+    /* TABLE */
+    .table-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .table-card .card-head{padding:14px 20px;border-bottom:1px solid var(--border);font-size:.85rem;font-weight:700;}
+    table{width:100%;border-collapse:collapse;}
+    th,td{padding:10px 16px;text-align:left;font-size:.82rem;}
+    th{color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);}
+    tr:not(:last-child) td{border-bottom:1px solid var(--border);}
+    /* BADGE */
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:700;}
+    .badge.green{background:#003322;color:var(--green);}
+    .badge.red{background:#2a0010;color:var(--red);}
+    .badge.yellow{background:#2a2200;color:var(--yellow);}
+    .badge.blue{background:#0a0a2e;color:var(--accent2);}
+    /* ALERT BOX */
+    .alert{background:#2a0a0a;border:1px solid var(--red);border-radius:8px;padding:14px 18px;margin-bottom:24px;font-size:.85rem;}
+    .alert strong{color:var(--red);}
+    /* PIPELINE TABLE */
+    .pipeline-status{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px;}
+    .pipeline-status .card-head{padding:14px 20px;border-bottom:1px solid var(--border);font-size:.85rem;font-weight:700;}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Surplus<span>Bot</span> — Dashboard</div>
+  <div class="status"><span class="dot"></span>Live · Last updated: <span id="ts"></span></div>
+</div>
+
+<main>
+
+  <!-- ALERT if API keys missing -->
+  <div class="alert" id="apiAlert">
+    <strong>⚠ BLOQUANT :</strong> 4 API keys invalides (TG / Airtable / Instantly / n8n).
+    Aucun email envoyé. Régénérer les tokens et remplir <code>~/Desktop/surplusbot/.env</code>.
+  </div>
+
+  <!-- KPIs -->
+  <h2>Pipeline Overview</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Total Leads DB</div>
+      <div class="value" id="kpiTotal">—</div>
+      <div class="delta neutral" id="kpiTotalDelta">Loading...</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Valid Leads</div>
+      <div class="value" id="kpiValid">—</div>
+      <div class="delta neutral">Score ≥60</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Score Avg</div>
+      <div class="value" id="kpiAvgScore">—</div>
+      <div class="delta neutral">0–100</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Emails Sent</div>
+      <div class="value" id="kpiSent">0</div>
+      <div class="delta down">API key invalid</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Replies</div>
+      <div class="value">0</div>
+      <div class="delta neutral">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Bookings</div>
+      <div class="value">0</div>
+      <div class="delta neutral">—</div>
+    </div>
+    <div class="kpi">
+      <div class="label">MRR</div>
+      <div class="value">$0</div>
+      <div class="delta neutral">Stripe pending</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Gumroad Sales</div>
+      <div class="value">0</div>
+      <div class="delta neutral">Upload pending</div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- PIPELINES STATUS -->
+    <div class="table-card">
+      <div class="card-head">🔧 Infrastructure Status</div>
+      <table>
+        <thead><tr><th>Component</th><th>Status</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>SurplusBot DB</td><td><span class="badge green">OK</span></td><td>WAL mode, 888 records</td></tr>
+          <tr><td>Lead Filters</td><td><span class="badge green">FIXED</span></td><td>_is_valid_owner_name active</td></tr>
+          <tr><td>health_check.sh</td><td><span class="badge green">FIXED</span></td><td>/usr/bin/python3</td></tr>
+          <tr><td>Playwright</td><td><span class="badge green">OK</span></td><td>Chromium available</td></tr>
+          <tr><td>Telegram Bot</td><td><span class="badge red">401</span></td><td>Regen TG_TOKEN</td></tr>
+          <tr><td>Airtable CRM</td><td><span class="badge red">401</span></td><td>Regen token</td></tr>
+          <tr><td>Instantly API</td><td><span class="badge red">401</span></td><td>Regen key</td></tr>
+          <tr><td>n8n Workflows</td><td><span class="badge red">401</span></td><td>Regen API key</td></tr>
+          <tr><td>Stripe</td><td><span class="badge yellow">PENDING</span></td><td>Run stripe_setup.py</td></tr>
+          <tr><td>Landing Page</td><td><span class="badge blue">READY</span></td><td>landing/index.html</td></tr>
+          <tr><td>Gumroad Product</td><td><span class="badge yellow">DRAFT</span></td><td>Upload ZIP + cover</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- INSTANTLY CAMPAIGNS -->
+    <div class="table-card">
+      <div class="card-head">📧 Instantly Campaigns</div>
+      <table>
+        <thead><tr><th>Campaign</th><th>Leads</th><th>Sent</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Gaza-AI Outreach FR</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>Agences B2B EN</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>Surplus Funds US</td><td>71</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>RE Wholesalers</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>Solar Leads EU</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>SaaS Outbound EN</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+          <tr><td>Unclaimed Property</td><td>50</td><td>0</td><td><span class="badge red">BLOCKED</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- LEADS BY SCORE DISTRIBUTION -->
+  <div class="table-card" style="margin-bottom:28px;">
+    <div class="card-head">📊 Lead Score Distribution (post-cleanup)</div>
+    <table>
+      <thead><tr><th>Score Range</th><th>Label</th><th>Count</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>80–100</td><td><span class="badge green">PREMIUM</span></td><td id="s80">—</td><td>Send immediately</td></tr>
+        <tr><td>60–79</td><td><span class="badge blue">EXPLOITABLE</span></td><td id="s60">—</td><td>Send in batch</td></tr>
+        <tr><td>40–59</td><td><span class="badge yellow">LOW</span></td><td id="s40">—</td><td>Enrich before sending</td></tr>
+        <tr><td>0–39</td><td><span class="badge red">REJECT</span></td><td id="s0">—</td><td>Discard</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- REVENUE TRACKER -->
+  <h2>Revenue</h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">MRR</div><div class="value">$0</div><div class="delta neutral">Target: $297 by EOJune</div></div>
+    <div class="kpi"><div class="label">ARR (proj)</div><div class="value">$0</div><div class="delta neutral">—</div></div>
+    <div class="kpi"><div class="label">Gumroad Revenue</div><div class="value">$0</div><div class="delta neutral">$297/sale</div></div>
+    <div class="kpi"><div class="label">White Label Clients</div><div class="value">0</div><div class="delta neutral">Target: 3</div></div>
+    <div class="kpi"><div class="label">CAC</div><div class="value">—</div><div class="delta neutral">Track after 1st sale</div></div>
+    <div class="kpi"><div class="label">LTV</div><div class="value">—</div><div class="delta neutral">—</div></div>
+  </div>
+
+  <!-- NEXT ACTIONS -->
+  <div class="table-card">
+    <div class="card-head">🎯 Next Actions (Priority Order)</div>
+    <table>
+      <thead><tr><th>#</th><th>Action</th><th>Effort</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Regen 4 API tokens (TG/n8n/Airtable/Instantly)</td><td>25min</td><td><span class="badge red">BLOCKING</span></td></tr>
+        <tr><td>2</td><td>Upload ZIP + cover to Gumroad</td><td>5min</td><td><span class="badge red">BLOCKING</span></td></tr>
+        <tr><td>3</td><td>python3 scripts/clean_db.py (purge 888 bad leads)</td><td>1min</td><td><span class="badge yellow">PENDING</span></td></tr>
+        <tr><td>4</td><td>python3 surplusbot.py run (first real scrape)</td><td>10min</td><td><span class="badge yellow">PENDING</span></td></tr>
+        <tr><td>5</td><td>export STRIPE_SECRET_KEY=... → python3 stripe/stripe_setup.py</td><td>5min</td><td><span class="badge yellow">PENDING</span></td></tr>
+        <tr><td>6</td><td>Deploy landing/index.html (GitHub Pages)</td><td>10min</td><td><span class="badge blue">READY</span></td></tr>
+        <tr><td>7</td><td>Add email sequences to Instantly (see sequences/)</td><td>30min</td><td><span class="badge blue">READY</span></td></tr>
+        <tr><td>8</td><td>Create 2nd Zoho mailbox → Instantly</td><td>30min</td><td><span class="badge blue">GUIDE READY</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script>
+  // Timestamp
+  document.getElementById('ts').textContent = new Date().toLocaleTimeString();
+
+  // Load live stats from SurplusBot API if available
+  async function loadStats() {
+    try {
+      const r = await fetch('http://localhost:8080/api/stats');
+      if (!r.ok) return;
+      const d = await r.json();
+      document.getElementById('kpiTotal').textContent = d.total ?? '—';
+      document.getElementById('kpiValid').textContent = d.qualified_60plus ?? '—';
+      document.getElementById('kpiSent').textContent = d.sent ?? '0';
+      const avg = d.avg_amount ? ('$'+Math.round(d.avg_amount).toLocaleString()) : '—';
+      document.getElementById('kpiAvgScore').textContent = avg;
+    } catch(e) {
+      // Static fallback already shown
+    }
+  }
+  loadStats();
+  setInterval(loadStats, 60000);
+</script>
+</body>
+</html>

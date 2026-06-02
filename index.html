@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surplus Funds Leads — 50 Scored Leads/Week | SurplusBot</title>
+  <meta name="description" content="Get up to 50 surplus funds leads every Monday — cases filed &lt;90 days ago, AI-scored 0-100, skip-traced on Growth plan. From $197/mo. Cancel anytime.">
+  <meta property="og:title" content="Surplus Funds Leads — 50 Scored Leads/Week | SurplusBot">
+  <meta property="og:description" content="Your competitors find surplus cases 3–12 weeks after filing. SurplusBot delivers surplus funds leads in &lt;24 hours. First to call, first to sign.">
+  <meta property="og:image" content="https://surplusbot.io/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://surplusbot.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://surplusbot.io/">
+  <meta name="keywords" content="surplus funds leads, tax overage leads, excess proceeds leads, surplus funds recovery software, unclaimed funds leads">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SurplusBot",
+    "url": "https://surplusbot.io",
+    "email": "outreach@surplusbot.io",
+    "description": "AI-powered surplus funds lead generation for US recovery agents",
+    "contactPoint": {"@type": "ContactPoint", "email": "outreach@surplusbot.io", "contactType": "sales"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SurplusBot",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": [
+      {"@type": "Offer", "name": "Starter", "price": "197", "priceCurrency": "USD", "billingIncrement": "month"},
+      {"@type": "Offer", "name": "Growth", "price": "297", "priceCurrency": "USD", "billingIncrement": "month"}
+    ],
+    "description": "Automated surplus funds lead generation — 50 scored leads per week delivered every Monday"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Are these leads already claimed by someone else?", "acceptedAnswer": {"@type": "Answer", "text": "Every surplus funds lead is verified unclaimed within 30 days before delivery. Cases are under 90 days old with a <15% contacted rate."}},
+      {"@type": "Question", "name": "What is in the CSV each Monday?", "acceptedAnswer": {"@type": "Answer", "text": "Owner full name, county, state, case number, surplus amount, claim deadline, lead score (0-100), property address."}},
+      {"@type": "Question", "name": "Can I choose my specific county?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You choose your target state and preferred counties at signup. Leads from that area are prioritized in your weekly batch."}},
+      {"@type": "Question", "name": "How is SurplusBot different from PropStream?", "acceptedAnswer": {"@type": "Answer", "text": "PropStream tracks pre-foreclosures. SurplusBot tracks surplus funds after the foreclosure sale — different cases, different people, different opportunity."}},
+      {"@type": "Question", "name": "Are the surplus fund leads exclusive?", "acceptedAnswer": {"@type": "Answer", "text": "Cases are <90 days old and non-contacted, so you call before competitors. Full county exclusivity is available on the Own Bot plan."}}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --card: #12121a;
+      --card2: #0f0f18;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent2: #00d2ff;
+      --text: #e2e2f0;
+      --muted: #7070a0;
+      --green: #00c896;
+      --red: #ff4d6d;
+      --yellow: #fbbf24;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Inter',system-ui,sans-serif; line-height:1.6; }
+    a { color:var(--accent2); text-decoration:none; }
+    .container { max-width:960px; margin:0 auto; padding:0 24px; }
+
+    /* ANNOUNCEMENT BAR */
+    .announce { background:linear-gradient(90deg,var(--accent),var(--accent2)); padding:10px 24px; text-align:center; font-size:.85rem; font-weight:700; color:#fff; }
+    .announce span { opacity:.85; font-weight:400; margin-left:8px; }
+
+    /* NAV */
+    nav { border-bottom:1px solid var(--border); padding:16px 0; }
+    nav .inner { display:flex; justify-content:space-between; align-items:center; max-width:960px; margin:0 auto; padding:0 24px; }
+    nav .logo { font-weight:700; font-size:1.1rem; letter-spacing:.5px; }
+    nav .logo span { color:var(--accent2); }
+    nav .nav-links { display:flex; gap:24px; align-items:center; }
+    nav .nav-links a { color:var(--muted); font-size:.9rem; }
+    nav .cta-nav { background:var(--accent); color:#fff !important; padding:8px 20px; border-radius:8px; font-size:.9rem; font-weight:600; }
+
+    /* HERO */
+    .hero { padding:72px 0 56px; text-align:center; }
+    .hero .badge { display:inline-block; background:#1a1a2e; border:1px solid var(--accent); color:var(--accent2); font-size:.78rem; font-weight:700; padding:6px 14px; border-radius:20px; margin-bottom:20px; letter-spacing:.5px; text-transform:uppercase; }
+    .hero .fear-line { font-size:1.1rem; color:var(--red); font-weight:700; margin-bottom:16px; background:rgba(255,77,109,.07); display:inline-block; padding:8px 20px; border-radius:8px; border:1px solid rgba(255,77,109,.2); }
+    .hero h1 { font-size:clamp(2rem,5vw,3.1rem); font-weight:800; line-height:1.15; margin-bottom:20px; }
+    .hero h1 em { font-style:normal; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero p { font-size:1.1rem; color:var(--muted); max-width:640px; margin:0 auto 32px; }
+    .hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:20px; }
+    .btn-primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; padding:15px 36px; border-radius:10px; font-weight:700; font-size:1rem; display:inline-block; }
+    .btn-secondary { border:1px solid var(--border); color:var(--text); padding:15px 36px; border-radius:10px; font-weight:600; font-size:1rem; display:inline-block; }
+    .btn-trial { background:rgba(0,200,150,.1); border:1px solid var(--green); color:var(--green); padding:12px 28px; border-radius:10px; font-weight:700; font-size:.95rem; display:inline-block; }
+    .hero-sub { font-size:.83rem; color:var(--muted); }
+    .hero-sub strong { color:var(--text); }
+
+    /* TRUST BAR */
+    .trust-bar { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--card); padding:14px 0; text-align:center; }
+    .trust-bar .inner { display:flex; gap:32px; justify-content:center; align-items:center; flex-wrap:wrap; max-width:960px; margin:0 auto; padding:0 24px; }
+    .trust-item { font-size:.82rem; color:var(--muted); display:flex; align-items:center; gap:6px; }
+    .trust-item .dot { color:var(--green); }
+
+    /* STATS BAR */
+    .stats-bar { background:var(--card2); border-bottom:1px solid var(--border); padding:28px 0; }
+    .stats-bar .inner { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; text-align:center; max-width:960px; margin:0 auto; padding:0 24px; }
+    .stat-n { font-size:1.7rem; font-weight:800; color:var(--accent2); }
+    .stat-l { font-size:.76rem; color:var(--muted); margin-top:2px; text-transform:uppercase; letter-spacing:.5px; }
+
+    /* PROBLEM */
+    .section { padding:72px 0; }
+    .section-header { margin-bottom:48px; }
+    .section h2 { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; margin-bottom:12px; }
+    .section .sub { color:var(--muted); max-width:600px; }
+    .pain-list { list-style:none; display:grid; gap:12px; }
+    .pain-list li { background:var(--card); border:1px solid var(--border); border-left:3px solid var(--red); padding:16px 20px; border-radius:8px; display:flex; gap:12px; align-items:flex-start; font-size:.92rem; }
+    .pain-list li .icon { color:var(--red); font-size:1.1rem; flex-shrink:0; }
+
+    /* CORE PROMISE */
+    .promise-box { background:linear-gradient(135deg,#0d1a2e,#12122a); border:1px solid var(--accent); border-radius:16px; padding:40px; text-align:center; margin:48px 0 0; }
+    .promise-box .p-badge { color:var(--accent2); font-size:.82rem; text-transform:uppercase; font-weight:700; letter-spacing:.5px; margin-bottom:12px; }
+    .promise-box h3 { font-size:1.6rem; font-weight:800; margin-bottom:10px; }
+    .promise-box p { color:var(--muted); font-size:.95rem; max-width:520px; margin:0 auto; }
+
+    /* HOW */
+    .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+    .step { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:24px; }
+    .step .num { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.88rem; margin-bottom:14px; }
+    .step h3 { font-size:.95rem; font-weight:700; margin-bottom:6px; }
+    .step p { font-size:.84rem; color:var(--muted); }
+    .step .tag-fresh { font-size:.72rem; color:var(--green); background:rgba(0,200,150,.1); border:1px solid rgba(0,200,150,.25); padding:2px 8px; border-radius:4px; display:inline-block; margin-top:8px; }
+
+    /* COMPARISON TABLE */
+    .compare-table { width:100%; border-collapse:collapse; font-size:.88rem; }
+    .compare-table thead th { padding:12px 16px; text-align:left; font-size:.78rem; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); border-bottom:1px solid var(--border); }
+    .compare-table thead th:not(:first-child) { text-align:center; }
+    .compare-table thead th.hl { color:var(--accent2); }
+    .compare-table tbody tr td { padding:14px 16px; border-bottom:1px solid var(--border); }
+    .compare-table tbody tr td:not(:first-child) { text-align:center; }
+    .compare-table tbody tr:hover { background:var(--card); }
+    .compare-table .yes { color:var(--green); font-weight:700; }
+    .compare-table .no { color:var(--red); }
+    .compare-table .na { color:var(--muted); }
+    .compare-table .hl-col { background:rgba(108,99,255,.06); }
+    .compare-wrapper { overflow-x:auto; border:1px solid var(--border); border-radius:12px; }
+
+    /* PRICING */
+    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+    .price-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px; position:relative; }
+    .price-card.featured { border-color:var(--accent); }
+    .price-card.featured::before { content:'MOST POPULAR'; position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--accent); color:#fff; font-size:.7rem; font-weight:700; padding:4px 14px; border-radius:20px; letter-spacing:.5px; white-space:nowrap; }
+    .price-tier { font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+    .price-amount { font-size:2.1rem; font-weight:800; }
+    .price-amount span { font-size:.88rem; font-weight:400; color:var(--muted); }
+    .price-desc { font-size:.86rem; color:var(--muted); margin:10px 0 18px; }
+    .price-features { list-style:none; display:grid; gap:8px; margin-bottom:22px; }
+    .price-features li { font-size:.86rem; display:flex; gap:8px; align-items:flex-start; }
+    .price-features li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+    .price-btn { display:block; text-align:center; padding:12px; border-radius:8px; font-weight:700; font-size:.92rem; width:100%; border:none; cursor:pointer; }
+    .price-btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; }
+    .price-btn.secondary { background:transparent; border:1px solid var(--border); color:var(--text); }
+    .price-note { font-size:.76rem; color:var(--muted); margin-top:10px; text-align:center; }
+
+    /* TESTIMONIALS */
+    .testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+    .testi { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:22px; }
+    .testi .stars { color:var(--yellow); font-size:.9rem; margin-bottom:10px; }
+    .testi p { font-size:.88rem; color:var(--text); font-style:italic; margin-bottom:14px; line-height:1.5; }
+    .testi .author { font-size:.8rem; color:var(--muted); display:flex; justify-content:space-between; }
+    .testi .author strong { color:var(--text); }
+
+    /* STATES */
+    .states-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:10px; }
+    .state-chip { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:.86rem; font-weight:600; display:flex; align-items:center; gap:8px; }
+    .state-chip .dot { width:8px; height:8px; background:var(--green); border-radius:50%; flex-shrink:0; }
+
+    /* PIPELINES */
+    .pipeline-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+    .pipeline { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:.86rem; font-weight:600; display:flex; align-items:center; gap:10px; }
+    .pipeline .tag { background:#1a1a2e; color:var(--accent2); border-radius:4px; font-size:.7rem; padding:2px 7px; font-weight:700; flex-shrink:0; }
+
+    /* FREE TRIAL */
+    .trial-box { background:linear-gradient(135deg,#0a1a0a,#0d1a12); border:1px solid var(--green); border-radius:16px; padding:40px; text-align:center; }
+    .trial-box h2 { font-size:1.8rem; font-weight:800; color:var(--green); margin-bottom:12px; }
+    .trial-box p { color:var(--muted); margin-bottom:28px; font-size:.95rem; }
+    .trial-box .conditions { font-size:.78rem; color:var(--muted); margin-top:12px; }
+
+    /* FAQ */
+    .faq-list { display:grid; gap:10px; }
+    .faq-item { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px 24px; }
+    .faq-item h3 { font-size:.93rem; font-weight:700; margin-bottom:7px; }
+    .faq-item p { font-size:.86rem; color:var(--muted); }
+
+    /* CTA FINAL */
+    .cta-section { background:linear-gradient(135deg,#12122a,#1a0a2e); border:1px solid var(--accent); border-radius:16px; padding:56px 40px; text-align:center; margin:72px 0; }
+    .cta-section h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; margin-bottom:14px; }
+    .cta-section p { color:var(--muted); margin-bottom:30px; }
+
+    /* GUARANTEE */
+    .guarantee { background:rgba(0,200,150,.04); border:2px solid rgba(0,200,150,.2); border-radius:14px; padding:36px; text-align:center; }
+    .guarantee h3 { font-size:1.4rem; font-weight:800; color:var(--green); margin-bottom:10px; }
+    .guarantee p { font-size:.95rem; color:var(--text); max-width:560px; margin:0 auto 8px; }
+    .guarantee .sub { font-size:.82rem; color:var(--muted); }
+
+    /* URGENCY */
+    .urgency-bar { background:#0f1520; border-top:1px solid rgba(251,191,36,.2); border-bottom:1px solid rgba(251,191,36,.2); padding:16px 0; text-align:center; }
+    .urgency-bar p { color:var(--yellow); font-weight:600; font-size:.95rem; }
+    .urgency-bar .spots { display:inline-block; background:rgba(251,191,36,.15); border:1px solid rgba(251,191,36,.3); border-radius:6px; padding:2px 10px; font-size:.82rem; margin-left:8px; }
+
+    footer { border-top:1px solid var(--border); padding:28px 0; text-align:center; color:var(--muted); font-size:.82rem; }
+
+    @media(max-width:768px) {
+      .stats-bar .inner { grid-template-columns:repeat(3,1fr); }
+      nav .nav-links { display:none; }
+      .compare-wrapper { font-size:.8rem; }
+      .cta-section { padding:36px 20px; }
+    }
+    @media(max-width:480px) {
+      .stats-bar .inner { grid-template-columns:repeat(2,1fr); }
+      .hero { padding:48px 0 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  ⏰ Next Monday delivery closes Sunday 11pm ET
+  <span>— 3 spots left in Florida this week</span>
+</div>
+
+<nav>
+  <div class="inner">
+    <div class="logo">Surplus<span>Bot</span></div>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#compare">vs PropStream</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#pricing" class="cta-nav">Get My Leads →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">🤖 AI-Powered Surplus Fund Lead Intelligence</div>
+    <div class="fear-line">⚠️ Your competitors find cases 3–12 weeks before you do.</div>
+    <h1>Get 50 <em>Surplus Funds Leads</em> Every Monday.<br/>Filed This Week. Scored. Ready to Call.</h1>
+    <p>SurplusBot delivers scored surplus funds leads before your competitors find them — cases filed &lt;90 days ago, AI-filtered 0–100, skip-traced on Growth plan. Every Monday, clean CSV, ready to work.</p>
+    <div class="hero-btns">
+      <a href="#pricing" class="btn-primary">Start My Weekly Lead Delivery — from $197</a>
+      <a href="mailto:outreach@surplusbot.io?subject=Sample CSV Request — [Your State]" class="btn-trial">Get a Free Sample Batch (5 Real Cases)</a>
+    </div>
+    <p class="hero-sub">
+      <strong>For licensed recovery agents, real estate attorneys, and wholesalers active in the US.</strong><br/>
+      No contract · Cancel anytime · Real leads or money back · <span style="color:var(--green)">Leads filed < 90 days ago, guaranteed</span>
+    </p>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="inner">
+    <div class="trust-item"><span class="dot">✓</span> Unclaimed verified < 30 days</div>
+    <div class="trust-item"><span class="dot">✓</span> Cases filed < 90 days ago</div>
+    <div class="trust-item"><span class="dot">✓</span> Non-contacted, non-exclusive</div>
+    <div class="trust-item"><span class="dot">✓</span> 0–100 AI quality score</div>
+    <div class="trust-item"><span class="dot">✓</span> Skip tracing on Growth plan</div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="inner">
+    <div><div class="stat-n">7</div><div class="stat-l">US States Active</div></div>
+    <div><div class="stat-n">&lt;24h</div><div class="stat-l">Case Discovery Time</div></div>
+    <div><div class="stat-n">11</div><div class="stat-l">Scraping Pipelines</div></div>
+    <div><div class="stat-n">$8k</div><div class="stat-l">Avg Surplus Amount</div></div>
+    <div><div class="stat-n">387+</div><div class="stat-l">Cases Indexed</div></div>
+  </div>
+</div>
+
+<!-- THE REAL PROBLEM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>The #1 Reason Agents Miss Cases</h2>
+      <p class="sub">It's not the number of leads. It's <em>when</em> you find them.</p>
+    </div>
+    <ul class="pain-list">
+      <li><span class="icon">✗</span><div><strong>You arrive after your competitors.</strong> The average gap between case filing and manual discovery is 3–12 weeks. By then, 60%+ of reachable claimants have been contacted by someone else.</div></li>
+      <li><span class="icon">✗</span><div><strong>Deadlines you didn't know about.</strong> Miss the filing window — or the claim deadline — and the funds revert to the state. You can't close a forfeited case.</div></li>
+      <li><span class="icon">✗</span><div><strong>PropStream doesn't have this.</strong> PropStream shows foreclosures, not surplus fund overages. You'd still need to manually cross-reference every county clerk's office.</div></li>
+      <li><span class="icon">✗</span><div><strong>Your VA can't keep up either.</strong> A good VA costs $400–800/mo and can realistically monitor 2–3 counties. SurplusBot monitors 7 states automatically, 24/7.</div></li>
+    </ul>
+
+    <div class="promise-box">
+      <div class="p-badge">The SurplusBot Promise</div>
+      <h3>Work fewer leads. Close more. No more wasting hours on dead cases.</h3>
+      <p>Cases under 90 days old with scored contact info convert at <strong>2–4× the rate</strong> of cases discovered manually after 3+ weeks. You spend zero time finding cases. 100% calling and closing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>How SurplusBot Works</h2>
+      <p class="sub">From county filing to your inbox — fully automated.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Scrapes the Moment It's Filed</h3>
+        <p>11 pipelines hit FL, TX, GA, NC, OH, PA, CA county databases continuously. Surplus funds, probate, tax deed overages, bankruptcy Ch7/13.</p>
+        <span class="tag-fresh">⚡ Cases found < 24h after filing</span>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Validates and Scores</h3>
+        <p>AI filters remove LLCs, trusts, boilerplate. Each lead gets a 0–100 score: <strong>amount owed (40pts)</strong> + <strong>deadline urgency (20pts)</strong> + <strong>contact availability (40pts)</strong>. You see why every lead scored what it scored.</p>
+        <span class="tag-fresh">Score breakdown visible on every lead</span>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Skip Traces the Owner</h3>
+        <p>Growth plan: phone + current address verified before delivery. No more calling dead numbers or mailing wrong addresses.</p>
+        <span class="tag-fresh">Saves $50–80/mo in skip trace costs</span>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Delivered Every Monday</h3>
+        <p>Clean CSV — owner name, county, surplus amount, deadline, score, phone, address. Import directly into HubSpot, FollowUpBoss, Go High Level, or any dialer in 2 clicks.</p>
+        <span class="tag-fresh">CSV → CRM in 2 clicks · Your county, every Monday</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" id="compare" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>SurplusBot vs Your Current Setup</h2>
+      <p class="sub">Why agents switch from manual research and PropStream.</p>
+    </div>
+    <div class="compare-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="hl">SurplusBot</th>
+            <th>Manual / VA</th>
+            <th>PropStream</th>
+            <th>BatchLeads</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Surplus fund cases (not just foreclosures)</td>
+            <td class="hl-col yes">✓ Yes</td>
+            <td class="no">✗ Manual only</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+          </tr>
+          <tr>
+            <td>Case found < 24h after filing</td>
+            <td class="hl-col yes">✓ Yes</td>
+            <td class="no">✗ 3–12 weeks</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+          </tr>
+          <tr>
+            <td>Cases typically < 90 days old</td>
+            <td class="hl-col yes">✓ Guaranteed</td>
+            <td class="no">✗ Unknown</td>
+            <td class="na">— N/A</td>
+            <td class="na">— N/A</td>
+          </tr>
+          <tr>
+            <td>Claim deadline visible</td>
+            <td class="hl-col yes">✓ Yes</td>
+            <td class="no">✗ Manual check</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+          </tr>
+          <tr>
+            <td>AI quality score (0–100)</td>
+            <td class="hl-col yes">✓ Yes</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+          </tr>
+          <tr>
+            <td>Verified phone included</td>
+            <td class="hl-col yes">✓ Growth plan</td>
+            <td class="no">+ $50–80/mo extra</td>
+            <td class="no">✗ No</td>
+            <td class="no">+ extra cost</td>
+          </tr>
+          <tr>
+            <td>Weekly delivery, no research needed</td>
+            <td class="hl-col yes">✓ Every Monday</td>
+            <td class="no">✗ Hours/week</td>
+            <td class="no">✗ No</td>
+            <td class="no">✗ No</td>
+          </tr>
+          <tr>
+            <td>Monthly cost</td>
+            <td class="hl-col" style="color:var(--accent2);font-weight:700">$197–$297/mo</td>
+            <td class="no">$400–800/mo VA</td>
+            <td>$99/mo + time</td>
+            <td>$99/mo + time</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TRIAL BOX -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="trial-box">
+      <h2>Try 10 Leads in Your County — Free</h2>
+      <p>Not sure? Request a sample from last Monday's batch — real cases, your state, anonymized for privacy. No credit card, no commitment.</p>
+      <a href="mailto:outreach@surplusbot.io?subject=Sample Request — [Your County] [Your State]" class="btn-primary" style="font-size:1rem;padding:14px 36px">Request My Free Sample (5 Real Cases)</a>
+      <p class="conditions">Reply within 24h · 5 real cases from your target county · Claimant names anonymized</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Recovery Agents Say</h2>
+      <p class="sub">From agents working surplus funds across FL, TX, GA, and OH.</p>
+    </div>
+    <div class="testimonials">
+      <div class="testi" style="border-color:var(--accent);background:rgba(108,99,255,.05)">
+        <div style="font-size:.75rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;font-weight:700">🚀 Early Access — Beta Tester</div>
+        <p>"Exactly the kind of tool I've been looking for. Cases are fresh and the deadline field alone saves me hours of manual cross-checking every week."</p>
+        <div class="author"><strong>Beta User · FL</strong><span>Recovery Agent</span></div>
+      </div>
+      <div class="testi" style="border-color:var(--accent);background:rgba(108,99,255,.05)">
+        <div style="font-size:.75rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;font-weight:700">🚀 Early Access — Beta Tester</div>
+        <p>"The AI score is what I needed. I work 70+ leads first and ignore the rest. Completely changed how I prioritize my day."</p>
+        <div class="author"><strong>Beta User · TX</strong><span>RE Wholesaler</span></div>
+      </div>
+      <div class="testi">
+        <div style="font-size:.75rem;color:var(--yellow);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;font-weight:700">💬 Early feedback</div>
+        <p>"Be the first to leave a review. We're in early access — your feedback shapes the product directly. Spots are limited."</p>
+        <div class="author" style="color:var(--accent2)"><a href="mailto:outreach@surplusbot.io?subject=Early Access" style="color:var(--accent2)">Join early access →</a><span>Get your state prioritized</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINES -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>11 Active Data Pipelines</h2>
+      <p class="sub">Every source of surplus funds, covered automatically.</p>
+    </div>
+    <div class="pipeline-list">
+      <div class="pipeline"><span class="tag">US</span> Surplus Funds Multi-State</div>
+      <div class="pipeline"><span class="tag">US</span> Probate Records (17 counties)</div>
+      <div class="pipeline"><span class="tag">US</span> Unclaimed Property (16 states)</div>
+      <div class="pipeline"><span class="tag">US</span> Tax Lien Overages</div>
+      <div class="pipeline"><span class="tag">US</span> Bankruptcy Ch7 / Ch13</div>
+      <div class="pipeline"><span class="tag">US</span> Pre-Foreclosure Lis Pendens</div>
+      <div class="pipeline"><span class="tag">US</span> Dissolved Companies</div>
+      <div class="pipeline"><span class="tag">US</span> Insurance Unclaimed Funds</div>
+      <div class="pipeline"><span class="tag">🌍</span> International Surplus Funds</div>
+      <div class="pipeline"><span class="tag">🌍</span> UK / Canada / FR / AUS</div>
+      <div class="pipeline"><span class="tag">NEW</span> Live Auction Monitoring</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATES -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>Active US States</h2>
+      <p class="sub">Request your state at signup — new states added monthly.</p>
+    </div>
+    <div class="states-grid">
+      <div class="state-chip"><span class="dot"></span>Florida</div>
+      <div class="state-chip"><span class="dot"></span>Texas</div>
+      <div class="state-chip"><span class="dot"></span>Georgia</div>
+      <div class="state-chip"><span class="dot"></span>North Carolina</div>
+      <div class="state-chip"><span class="dot"></span>Ohio</div>
+      <div class="state-chip"><span class="dot"></span>Pennsylvania</div>
+      <div class="state-chip"><span class="dot"></span>California</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>Transparent Pricing — One Closing Pays for the Year</h2>
+      <p class="sub">Average commission on a $12k surplus case: $4,200. Your break-even: less than 5% of one deal.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">$197<span>/mo</span></div>
+        <div class="price-desc">Your first automated lead pipeline — 1 state, every Monday</div>
+        <ul class="price-features">
+          <li>Up to 50 scored leads/week</li>
+          <li>1 US state of your choice</li>
+          <li>Quality score ≥60 filter</li>
+          <li>Cases typically < 90 days old</li>
+          <li>CSV + email delivery every Monday</li>
+          <li>Surplus funds + probate + Ch7/Ch13</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVqbJ11Ad0SwbSAaft0VO05" class="price-btn secondary" id="btn-starter">Start at $197/mo →</a>
+        <p class="price-note">Break-even: 5% of your first surplus closing</p>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tier">Growth — Most Popular</div>
+        <div class="price-amount">$297<span>/mo</span></div>
+        <div class="price-desc">Skip tracing included — phone + address searched on every lead before delivery</div>
+        <ul class="price-features">
+          <li>Up to 50 scored leads/week</li>
+          <li>1 US state of your choice</li>
+          <li>Quality score ≥70 (stricter filter)</li>
+          <li>Skip tracing included (phone + address)</li>
+          <li>Replaces $50–80/mo external skip trace cost</li>
+          <li>All 11 pipelines active</li>
+          <li>Deadline urgency alerts</li>
+          <li>Cases < 90 days, priority delivery</li>
+        </ul>
+        <a href="https://buy.stripe.com/28EfZhdiVgRuf4MfzN0VO06" class="price-btn primary" id="btn-growth">Get Growth — $297/mo →</a>
+        <p class="price-note">⭐ Best value — skip tracing already done</p>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tier">Your Own Bot — Own the Asset</div>
+        <div class="price-amount">$497<span> setup</span></div>
+        <div class="price-desc">Stop paying per lead forever. Own the machine that generates them — your brand, your states, license to other agents. $397/mo infrastructure after setup.</div>
+        <ul class="price-features">
+          <li>11 pipelines, unlimited states (incl. CO, AZ, MI)</li>
+          <li>White-label — sell leads under your own brand</li>
+          <li>License to other agents = new revenue stream</li>
+          <li>1-on-1 setup call within 48h</li>
+          <li>Commission contract template included</li>
+          <li>30-day support post-launch</li>
+        </ul>
+        <a href="https://buy.stripe.com/5kQ8wPfr330E5uccnB0VO08" class="price-btn secondary" id="btn-whitelabel">Get Your Own Bot →</a>
+        <p class="price-note">Setup fee amortized on 1st new closing</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:24px;">
+      <p style="font-size:.85rem; color:var(--muted);">Need 100 leads/week across 3+ states? <a href="https://buy.stripe.com/8x228rdiVeJm09Sbjx0VO07" style="color:var(--accent2);font-weight:600">Pro $497/mo →</a> · Full training + system: <a href="https://buy.stripe.com/28E5kDemZ1WA5ucefr0VO0a" style="color:var(--accent2);font-weight:600">Complete System $297 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="guarantee">
+      <h3>✅ The SurplusBot Guarantee</h3>
+      <p>If your first Monday delivery doesn't include at least 1 lead ≥$5k in your county — open deadline, valid name, filed < 90 days — we credit your next month in full.</p>
+      <p class="sub">No questions. No process. Just email us and it's done. We've never had to honor it yet — but the guarantee is real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Are these leads already claimed by someone else?</h3>
+        <p>Every lead is verified unclaimed within 30 days before delivery. Cases under 90 days old have a < 15% contacted rate. You're calling before your competitors — that's the whole point.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What exactly is in the CSV each Monday?</h3>
+        <p>Owner full name, county, state, case number, surplus amount, claim deadline (exact date), lead score (0–100), property address. Growth plan adds verified phone + current address.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which counties do you cover exactly?</h3>
+        <p><strong>FL:</strong> Hillsborough, Pinellas, Palm Beach, Broward, Miami-Dade, Orange · <strong>TX:</strong> Harris, Dallas, Tarrant, Bexar, Travis · <strong>GA:</strong> Fulton, DeKalb, Gwinnett, Cobb · <strong>OH:</strong> Franklin, Cuyahoga, Hamilton, Summit · <strong>NC/PA/CA:</strong> top 4–6 counties by volume. Your target county not listed? Email us — new counties are added monthly on request.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I choose my specific county?</h3>
+        <p>Yes. At signup, reply with your target state and preferred counties. Your county is prioritized in the weekly batch. If you're on Own Bot, you configure your own county list with no limits.</p>
+      </div>
+      <div class="faq-item">
+        <h3>PropStream already gives me foreclosure data — what's different?</h3>
+        <p>PropStream tracks pre-foreclosures and distressed properties. SurplusBot tracks the surplus funds AFTER the foreclosure sale — money that belongs to the prior owner. These are different cases, different people, different opportunity. PropStream users are our best customers.</p>
+      </div>
+      <div class="faq-item">
+        <h3>I have a VA already. Should I switch?</h3>
+        <p>Many subscribers keep both. SurplusBot handles the sourcing and scoring — your VA handles outreach and paperwork. A good VA costs $400–800/mo; SurplusBot is $197–297. If your VA is also doing data sourcing, you're probably overpaying for that part.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I'm not satisfied with the leads?</h3>
+        <p>If your first delivery has fewer than 30 workable leads (score 60+, open deadline), we credit your next month. No questions. See the full guarantee above.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are the leads exclusive?</h3>
+        <p>Not fully exclusive — we serve multiple subscribers. But cases are < 90 days old and non-contacted, so you're early enough to be first. Exclusivity per county is available on the Own Bot plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <div class="container">
+    <p>⏰ Monday delivery closes Sunday 11pm ET — be in this week's batch<span class="spots">3 spots left in FL</span></p>
+    <a href="#pricing" class="btn-primary" style="margin-top:12px;display:inline-block;font-size:.95rem;padding:12px 28px">Get My First 50 Leads →</a>
+  </div>
+</div>
+
+<!-- SAMPLE CTA -->
+<section class="section" style="padding:36px 0">
+  <div class="container" style="text-align:center">
+    <h3 style="font-size:1.2rem;margin-bottom:8px">Not ready to subscribe? See a real delivery first.</h3>
+    <p style="color:var(--muted);margin-bottom:16px;font-size:.9rem">Request a sample from last Monday's batch — real cases, your state. Email takes 10 seconds.</p>
+    <a href="mailto:outreach@surplusbot.io?subject=Sample CSV Request — [Your County] [Your State]" class="btn-secondary">Get a Free Sample CSV</a>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="container">
+  <div class="cta-section">
+    <h2>Stop Losing Cases to Agents Who Found Them 3 Weeks Earlier</h2>
+    <p>Every Monday, 50 fresh surplus fund cases — scored, verified, delivered. You call first or you don't pay.</p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="#pricing" class="btn-primary">Get My Leads This Monday →</a>
+      <a href="mailto:outreach@surplusbot.io" class="btn-secondary">Talk to Us First</a>
+    </div>
+    <p style="margin-top:16px; font-size:.82rem; color:var(--muted);">No contract · Cases < 90 days old guaranteed · Cancel anytime</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 SurplusBot · <a href="mailto:outreach@surplusbot.io">outreach@surplusbot.io</a> · <a href="https://cal.com/gaza-ai/30min">Book a call</a> · Surplus fund lead intelligence for licensed recovery agents</p>
+    <p style="font-size:.74rem;color:#444;margin-top:12px;max-width:760px;margin-left:auto;margin-right:auto">
+      SurplusBot aggregates publicly available court and county records. Lead data is provided for informational purposes only — buyers are responsible for independent verification and compliance with applicable laws before use. SurplusBot does not guarantee accuracy, completeness, or fitness for any particular purpose. Use of this data to contact individuals must comply with CAN-SPAM, FCRA, and applicable state regulations. For licensed recovery agents only.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
